@@ -12,13 +12,15 @@
     let isSearching = false;
     let currentQuery = '';
 
-    // ===== NORMALIZATION =====
+    // ===== NORMALIZATION (FIXED) =====
     function normalize(str) {
         return str.trim().toLowerCase()
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-            .replace(/[șş]/g, 's').replace(/[țţ]/g, 't')
-            .replace(/[ăâ]/g, 'a').replace(/[î]/g, 'i')
-            .replace(/\s+/g, ' ');
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')   // strip diacritics
+            .replace(/[șş]/g, 's').replace(/[țţ]/g, 't')        // Romanian S/T with cedilla/comma
+            .replace(/[ăâ]/g, 'a').replace(/[î]/g, 'i')          // Romanian A/I variants
+            .replace(/[-–—]/g, ' ')                               // hyphens, en-dash, em-dash → space
+            .replace(/\s+/g, ' ')                                 // collapse multiple spaces
+            .trim();
     }
 
     // ===== CREATE SLUG FOR URL =====
@@ -169,7 +171,7 @@
         }).join('');
     }
 
-    // ===== PERFORM SEARCH =====
+    // ===== PERFORM SEARCH (FIXED) =====
     function performSearch() {
         if (isSearching) return;
         if (!gymsData) {
@@ -195,12 +197,17 @@
         setTimeout(() => {
             const query = normalize(rawQuery);
 
-            // Filter by city, postal code, or name (allowing partial matches)
             const filtered = gymsData.filter(g => {
                 const cityNorm = normalize(g.city);
                 const postalNorm = normalize(g.postal_code);
                 const nameNorm = normalize(g.name);
-                return cityNorm.includes(query) || postalNorm.startsWith(query) || nameNorm.includes(query);
+                const addressNorm = normalize(g.address || '');
+
+                // Match city (full or partial), postal code (starts with or exact), name, or address
+                return cityNorm.includes(query) ||
+                       postalNorm.includes(query) ||     // ← changed from startsWith to includes for partial postcode
+                       nameNorm.includes(query) ||
+                       addressNorm.includes(query);
             });
 
             filtered.sort((a, b) => {
@@ -224,7 +231,7 @@
             if (count > 0) {
                 searchStatus.innerHTML = `<p style="color:#22C55E;">✅ Am găsit ${count} săli în această zonă.</p>`;
             } else {
-                searchStatus.innerHTML = ''; // noResultsContainer is already visible
+                searchStatus.innerHTML = '';
             }
 
             searchBtn.textContent = '🔍 Găsește Săli';
