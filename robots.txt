@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Tell search engines where to find the complete list of city pages
+Sitemap: https://gymlist.ro/sitemap.xml
+
+# Save crawl budget – no need to index these
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/

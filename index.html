@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ========== TITLE & META DESCRIPTION ========== -->
+    <title>Gymlist.ro — Cele Mai Bune Săli de Sport Verificate din Orașul Tău | Fitness Autentic</title>
+    <meta name="description" content="Descoperă cele mai bune săli de sport verificate anonim din România. Evaluări reale pe 5 criterii: igienă, echipament, atmosferă, profesionalism și facilități. Găsește sala ideală în orașul tău.">
+
+    <!-- ========== OPEN GRAPH ========== -->
+    <meta property="og:title" content="Gymlist.ro — Săli de Sport Verificate Anonim" />
+    <meta property="og:description" content="Evaluări reale pe 5 criterii. Fără recenzii false. Găsește sala potrivită în orașul tău." />
+    <meta property="og:image" content="https://gymlist.ro/img/og-image.jpg" />
+    <meta property="og:url" content="https://gymlist.ro" />
+    <meta property="og:type" content="website" />
+
+    <!-- ========== FAVICON ========== -->
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
+    <!-- ========== CANONICAL ========== -->
+    <link rel="canonical" href="https://gymlist.ro/" />
+
+    <!-- ========== JSON-LD ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Gymlist.ro",
+        "url": "https://gymlist.ro",
+        "description": "Cele mai bune săli de sport verificate anonim din România.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://gymlist.ro/?city={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- ========== FONT PRELOAD ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- ========== EMBEDDED CSS ========== -->
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --text-primary: #FFFFFF;
+            --accent: #2563EB;
+            --cta: #FF7A00;
+            --success: #22C55E;
+            --error: #EF4444;
+            --bg-secondary: #1e1e1e;
+            --text-muted: #aaaaaa;
+            --card-bg: #1e1e1e;
+            --border: #333;
+            --star: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 0 1.5rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* NAV */
+        .nav {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 60px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 1rem;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .nav-logo .slice {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+        }
+        .nav-cta {
+            background: var(--cta);
+            color: #fff;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #FF9633;
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1200px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(37, 99, 235, 0.15);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.9); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+        }
+        .hero .highlight {
+            color: var(--accent);
+            position: relative;
+        }
+        .hero .highlight::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 6px;
+            background: rgba(37, 99, 235, 0.3);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* SEARCH */
+        .search-section {
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 60px;
+            padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .search-wrapper:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 0.8rem 0;
+            font-size: 1rem;
+            background: transparent;
+            outline: none;
+            font-family: inherit;
+            color: #fff;
+        }
+        .search-input::placeholder {
+            color: #888;
+        }
+
+        .search-btn {
+            background: var(--cta);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+        .search-btn:hover {
+            background: #FF9633;
+        }
+        .search-btn:active {
+            transform: scale(0.96);
+        }
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .search-clear {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: #888;
+            cursor: pointer;
+            padding: 0 0.5rem;
+            display: none;
+        }
+        .search-clear:hover {
+            color: #fff;
+        }
+
+        .search-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.7rem;
+        }
+        .search-hint span {
+            background: var(--border);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .search-hint span:hover {
+            background: #555;
+        }
+
+        .search-status {
+            min-height: 2rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        /* RESULTS GRID */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            text-align: left;
+        }
+
+        /* GYM CARD */
+        .gym-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+        .gym-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
+        }
+
+        .gym-card .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #252525;
+        }
+
+        .gym-card .card-body {
+            padding: 1.2rem 1.4rem 1.4rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gym-card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .gym-card .card-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* STATUS BADGES */
+        .status-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.25rem 0.7rem;
+            border-radius: 30px;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .status-badge.approved {
+            background: var(--success);
+            color: #fff;
+        }
+        .status-badge.pending {
+            background: #6c757d;
+            color: #fff;
+        }
+
+        .gym-card .card-address {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0.2rem 0 0.4rem;
+        }
+
+        .gym-card .card-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0.2rem 0 0.8rem;
+            line-height: 1.4;
+        }
+
+        .gym-card .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .gym-card .card-actions a {
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+            background: #333;
+            color: #fff;
+        }
+        .gym-card .card-actions a:hover {
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+        }
+        .gym-card .card-actions .phone-link {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--accent);
+        }
+        .gym-card .card-actions .phone-link:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* NO RESULTS */
+        .no-results-msg {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2.5rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            text-align: center;
+            border: 2px dashed var(--border);
+        }
+        .no-results-msg p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+        .no-results-cta {
+            margin-top: 1rem;
+        }
+        .no-results-cta a {
+            display: inline-block;
+            background: var(--cta);
+            color: #fff;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .no-results-cta a:hover {
+            background: #FF9633;
+            text-decoration: none;
+        }
+
+        /* LOADING SPINNER */
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .loading-spinner .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #333;
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* SECTIONS */
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            text-align: center;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+            text-align: left;
+        }
+        .step-card {
+            background: var(--card-bg);
+            padding: 1.8rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+        }
+        .step-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 0.3rem;
+        }
+        .step-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            text-align: left;
+        }
+        .criteria-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .criteria-icon {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+        .criteria-card h4 {
+            font-weight: 700;
+        }
+        .criteria-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* TRUST BANNER */
+        .trust-banner {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: var(--bg-secondary);
+            color: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 28px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .trust-banner h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .trust-banner p {
+            max-width: 600px;
+            margin: 0.5rem auto 1.2rem;
+            color: var(--text-muted);
+        }
+        .seal-demo {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.4rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            max-width: 700px;
+            margin: 4rem auto 2rem;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+        }
+        .cta-section h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .cta-section p {
+            color: var(--text-muted);
+            margin: 0.3rem 0 1.5rem;
+        }
+        .btn-large {
+            display: inline-block;
+            background: var(--cta);
+            color: #fff;
+            padding: 0.8rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: background 0.2s;
+        }
+        .btn-large:hover {
+            background: #FF9633;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        .footer {
+            max-width: 1200px;
+            margin: 3rem auto 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .footer a {
+            color: #fff;
+            font-weight: 500;
+        }
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            body { padding: 0 1rem; }
+            .nav { flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+            .search-wrapper { flex-wrap: wrap; background: transparent; padding: 0; border: none; box-shadow: none; }
+            .search-input { background: var(--bg-secondary); padding: 0.8rem 1.2rem; border-radius: 40px; border: 1px solid var(--border); width: 100%; }
+            .search-btn { width: 100%; justify-content: center; padding: 0.9rem; }
+            .search-clear { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); display: none; }
+            .search-wrapper:focus-within .search-clear { display: block; }
+            .results-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+            .hero h1 { font-size: 2rem; }
+            .trust-banner { padding: 1.8rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav">
+        <a href="/" class="nav-logo">
+            <span class="slice"></span> Gymlist.ro
+        </a>
+        <a href="#search" class="nav-cta">Caută o Sală</a>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span> Verificat Anonim de Auditori Independenți
+        </div>
+        <h1>Descoperă <span class="highlight">cele mai bune săli de sport</span> verificate din orașul tău</h1>
+        <p class="hero-subtitle">
+            Fiecare sală este evaluată anonim, pe criterii reale: igienă, echipament, atmosferă, profesionalism și facilități. Fără recenzii plătite. Fără excepții. Auditorii noștri filmează experiența cu camere ascunse, iar videoclipurile sălilor care câștigă sigiliul <strong>„Gymlist Approved”</strong> sunt disponibile publicului.
+        </p>
+
+        <!-- ========== SEARCH ========== -->
+        <div class="search-section" id="search">
+            <div class="search-wrapper">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Introdu codul poștal sau orașul tău..."
+                    aria-label="Caută după cod poștal sau oraș"
+                    autocomplete="on"
+                >
+                <button class="search-btn" id="searchBtn" aria-label="Caută">
+                    🔍 Găsește Săli
+                </button>
+                <button class="search-clear" id="clearBtn" aria-label="Golește câmpul" style="display:none;">✕</button>
+            </div>
+            <p class="search-hint">
+                De exemplu: <span>010011</span> (București), <span>400001</span> (Cluj-Napoca), sau scrie direct <span>Brașov</span>
+            </p>
+            <div class="search-status" id="searchStatus" aria-live="polite"></div>
+        </div>
+
+        <!-- ========== RESULTS CONTAINER ========== -->
+        <div id="results" class="results-grid" style="display:none;"></div>
+        <div id="noResults" class="no-results-msg" style="display:none;">
+            <p>😕 Nu am găsit săli în această zonă.</p>
+            <p class="no-results-cta">
+                <a href="/contact.html">📢 Vino ca auditor și adaugă-le tu!</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section">
+        <h2 class="section-title">Cum funcționează Gymlist</h2>
+        <p class="section-subtitle">Transparență totală. Zero recenzii false.</p>
+        <div class="steps">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h4>Inspectăm Anonim</h4>
+                <p>Auditori independenți vizitează sălile ca simpli clienți. Se antrenează, observă, filmează — fără ca personalul să știe.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h4>Verificăm pe 5 Criterii</h4>
+                <p>Igienă, echipament, atmosferă, profesionalism și facilități. Aceleași standarde peste tot.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h4>Publicăm Rezultatul</h4>
+                <p>Doar sălile care trec toate cele 5 criterii primesc sigiliul „Gymlist Approved”. Videoclipurile devin publice. Fără excepții.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CRITERIA ========== -->
+    <section class="section">
+        <h2 class="section-title">Cele 5 Criterii de Evaluare</h2>
+        <p class="section-subtitle">Aceleași standarde stricte pentru fiecare sală din rețea.</p>
+        <div class="criteria-grid">
+            <div class="criteria-card">
+                <div class="criteria-icon">🧼</div>
+                <h4>Igienă</h4>
+                <p>Curățenie în vestiar, dușuri, aparate. Igiena personalului și a antrenorilor. Fără mirosuri neplăcute.</p>
+            </div>
+            <div class="criteria-card">
+                <div class="criteria-icon">🏋️</div>
+                <h4>Echipament</h4>
+                <p>Varietate de aparate, greutăți, benzi. Echipament modern, bine întreținut, fără defecțiuni.</p>
+            </div>
+            <div class="criteria-card">
+                <div class="criteria-icon">🎵</div>
+                <h4>Atmosferă</h4>
+                <p>Muzică ambientală, iluminare adecvată, temperatură confortabilă. Energie pozitivă, fără aglomerație excesivă.</p>
+            </div>
+            <div class="criteria-card">
+                <div class="criteria-icon">👨‍🏫</div>
+                <h4>Profesionalism</h4>
+                <p>Personal calificat, antrenori certificați. Promptitudine la cereri, corectitudine în abonamente.</p>
+            </div>
+            <div class="criteria-card">
+                <div class="criteria-icon">🅿️</div>
+                <h4>Facilități</h4>
+                <p>Parcare, acces persoane cu dizabilități, vestiare spațioase, saună, zone de stretching.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUST BANNER ========== -->
+    <div class="trust-banner">
+        <h3>⚠️ Listarea nu se cumpără. Niciodată.</h3>
+        <p>
+            Sălile apar pe Gymlist cu statutul lor real. Doar cele care trec absolut toate cele 5 criterii, în audite repetate, pot primi sigiliul <strong>„Gymlist Approved”</strong> — acordat automat pe baza datelor, nu a banilor.
+        </p>
+        <span class="seal-demo">🏅 Gymlist Approved — Doar pe Merit</span>
+    </div>
+
+    <!-- ========== CTA ========== -->
+    <div class="cta-section">
+        <h3>Ești proprietar de sală?</h3>
+        <p>
+            Revendică-ți pagina și pregătește-te pentru audit. Transparența rămâne totală — nu poți influența rezultatul.
+        </p>
+        <a href="/contact.html" class="btn-large">Contactează-ne pentru Audit</a>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p>© 2026 <strong>Gymlist.ro</strong> — Toate evaluările sunt independente și neverificabile de către săli înainte de publicare.</p>
+        <p style="margin-top:0.3rem;"><a href="/about.html">Despre noi</a> · <a href="/privacy.html">Confidențialitate</a> · <a href="/contact.html">Contact</a></p>
+    </footer>
+
+    <!-- ========== EMBEDDED JAVASCRIPT ========== -->
+    <script>
+        (function() {
+            'use strict';
+
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const resultsContainer = document.getElementById('results');
+            const noResultsContainer = document.getElementById('noResults');
+            const searchStatus = document.getElementById('searchStatus');
+
+            let gymsData = null;
+            let isSearching = false;
+            let currentQuery = '';
+
+            // Normalize Romanian text
+            function normalize(str) {
+                return str.trim().toLowerCase()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[șş]/g, 's').replace(/[țţ]/g, 't')
+                    .replace(/[ăâ]/g, 'a').replace(/[î]/g, 'i')
+                    .replace(/\s+/g, ' ');
+            }
+
+            function createSlug(city) {
+                return normalize(city).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            }
+
+            // Inject JSON-LD structured data for search results
+            function injectSchema(gyms, city) {
+                document.querySelectorAll('script[data-gymlist-schema]').forEach(el => el.remove());
+                if (!gyms || gyms.length === 0) return;
+
+                const itemList = {
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": `Cele mai bune săli de sport din ${city}`,
+                    "description": `Listă cu săli de sport verificate anonim în ${city}, evaluate pe 5 criterii: igienă, echipament, atmosferă, profesionalism și facilități.`,
+                    "numberOfItems": gyms.length,
+                    "itemListElement": gyms.map((g, index) => {
+                        const scores = [
+                            g.score_igiena || 0,
+                            g.score_echipament || 0,
+                            g.score_atmosfera || 0,
+                            g.score_profesionalism || 0,
+                            g.score_facilitati || 0
+                        ];
+                        const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+                        const ratingValue = (avgScore / 10) * 5;
+                        const roundedRating = Math.round(ratingValue * 10) / 10;
+
+                        return {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "item": {
+                                "@type": "LocalBusiness",
+                                "name": g.name,
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "streetAddress": g.address || '',
+                                    "addressLocality": g.city,
+                                    "postalCode": g.postal_code || '',
+                                    "addressCountry": "RO"
+                                },
+                                "telephone": g.phone || '',
+                                "url": g.website && g.website !== '#' ? g.website : `https://gymlist.ro/?city=${createSlug(g.city)}`,
+                                "image": g.image || '',
+                                "description": g.description || '',
+                                "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": roundedRating,
+                                    "reviewCount": 10,
+                                    "bestRating": "5",
+                                    "worstRating": "1"
+                                },
+                                "openingHours": "Mo-Su 06:00-23:00"
+                            }
+                        };
+                    })
+                };
+
+                const script = document.createElement('script');
+                script.setAttribute('data-gymlist-schema', 'true');
+                script.type = 'application/ld+json';
+                script.textContent = JSON.stringify(itemList);
+                document.head.appendChild(script);
+            }
+
+            // Load gym data from JSON file
+            function loadData() {
+                searchStatus.innerHTML = '<div class="loading-spinner"><span class="spinner"></span> Încărcăm lista de săli...</div>';
+                fetch('data/sali.json')
+                    .then(res => {
+                        if (!res.ok) throw new Error('HTTP ' + res.status);
+                        return res.json();
+                    })
+                    .then(data => {
+                        gymsData = data;
+                        searchStatus.innerHTML = '';
+                        searchBtn.disabled = false;
+                        toggleClearBtn();
+
+                        // Check URL params for city
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const cityParam = urlParams.get('city');
+                        if (cityParam) {
+                            searchInput.value = cityParam;
+                            setTimeout(performSearch, 300);
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Failed to load gym data:', err);
+                        searchStatus.innerHTML = '<p style="color:#EF4444;">⚠️ Nu am putut încărca lista de săli. Te rugăm să reîncarci pagina.</p>';
+                        searchBtn.disabled = true;
+                    });
+            }
+
+            function toggleClearBtn() {
+                clearBtn.style.display = searchInput.value.length > 0 ? 'block' : 'none';
+            }
+
+            function renderResults(gyms, query) {
+                resultsContainer.style.display = 'none';
+                noResultsContainer.style.display = 'none';
+                document.querySelectorAll('script[data-gymlist-schema]').forEach(el => el.remove());
+
+                if (!gyms || gyms.length === 0) {
+                    noResultsContainer.style.display = 'block';
+                    return;
+                }
+
+                injectSchema(gyms, query);
+
+                resultsContainer.style.display = 'grid';
+                resultsContainer.innerHTML = gyms.map(g => {
+                    const statusHtml = g.approved
+                        ? '<span class="status-badge approved">Aprobat Gymlist</span>'
+                        : '<span class="status-badge pending">În așteptare</span>';
+
+                    const phone = g.phone ? `<a href="tel:${g.phone}" class="phone-link">📞 Sună</a>` : '';
+                    const maps = g.address ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(g.address + ', ' + g.city)}" target="_blank" rel="noopener">🗺️ Hartă</a>` : '';
+                    const website = g.website && g.website !== '#' ? `<a href="${g.website}" target="_blank" rel="noopener">🌐 Site</a>` : '';
+                    const video = g.video_url && g.video_url !== '#' ? `<a href="${g.video_url}" target="_blank" rel="noopener">🎥 Video</a>` : '';
+
+                    const altText = `Sală ${g.name} în ${g.city}`;
+
+                    return `
+                        <div class="gym-card">
+                            <img class="card-image" src="${g.image || 'https://via.placeholder.com/400x200?text=🏋️'}" alt="${altText}" loading="lazy">
+                            <div class="card-body">
+                                <div class="card-header">
+                                    <span class="card-name">${g.name}</span>
+                                    ${statusHtml}
+                                </div>
+                                <div class="card-address">📍 ${g.address}, ${g.city} (${g.postal_code})</div>
+                                ${g.description ? `<p class="card-description">${g.description}</p>` : ''}
+                                <div class="card-actions">
+                                    ${phone}
+                                    ${maps}
+                                    ${website}
+                                    ${video}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            function performSearch() {
+                if (isSearching) return;
+                if (!gymsData) {
+                    searchStatus.innerHTML = '<p style="color:#EF4444;">⏳ Datele se încarcă. Încearcă din nou în câteva secunde.</p>';
+                    return;
+                }
+
+                const rawQuery = searchInput.value;
+                if (!rawQuery.trim()) {
+                    searchInput.focus();
+                    searchStatus.innerHTML = '<p style="color:#EF4444;">Te rugăm să introduci un oraș sau cod poștal.</p>';
+                    resultsContainer.style.display = 'none';
+                    noResultsContainer.style.display = 'none';
+                    document.querySelectorAll('script[data-gymlist-schema]').forEach(el => el.remove());
+                    return;
+                }
+
+                isSearching = true;
+                searchBtn.disabled = true;
+                searchBtn.textContent = '⏳ Căutăm...';
+                searchStatus.innerHTML = '<div class="loading-spinner"><span class="spinner"></span> Căutăm...</div>';
+
+                setTimeout(() => {
+                    const query = normalize(rawQuery);
+
+                    const filtered = gymsData.filter(g => {
+                        const cityNorm = normalize(g.city);
+                        const postalNorm = normalize(g.postal_code);
+                        const nameNorm = normalize(g.name);
+                        return cityNorm.includes(query) || postalNorm.startsWith(query) || nameNorm.includes(query);
+                    });
+
+                    filtered.sort((a, b) => {
+                        if (a.approved && !b.approved) return -1;
+                        if (!a.approved && b.approved) return 1;
+                        return a.name.localeCompare(b.name);
+                    });
+
+                    let cityForUrl = rawQuery.trim();
+                    if (filtered.length > 0) {
+                        cityForUrl = filtered[0].city;
+                    }
+                    const slug = createSlug(cityForUrl);
+                    const newUrl = window.location.pathname + '?city=' + encodeURIComponent(slug);
+                    window.history.pushState({ city: cityForUrl }, '', newUrl);
+
+                    renderResults(filtered, cityForUrl);
+
+                    const count = filtered.length;
+                    if (count > 0) {
+                        searchStatus.innerHTML = `<p style="color:#22C55E;">✅ Am găsit ${count} săli în această zonă.</p>`;
+                    } else {
+                        searchStatus.innerHTML = '';
+                    }
+
+                    searchBtn.textContent = '🔍 Găsește Săli';
+                    searchBtn.disabled = false;
+                    isSearching = false;
+                    currentQuery = rawQuery;
+                }, 300);
+            }
+
+            // Event listeners
+            searchBtn.addEventListener('click', performSearch);
+
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performSearch();
+                }
+            });
+
+            searchInput.addEventListener('input', function() {
+                toggleClearBtn();
+                if (!this.value.trim()) {
+                    resultsContainer.style.display = 'none';
+                    noResultsContainer.style.display = 'none';
+                    searchStatus.innerHTML = '';
+                    document.querySelectorAll('script[data-gymlist-schema]').forEach(el => el.remove());
+                    const cleanUrl = window.location.pathname;
+                    window.history.pushState({}, '', cleanUrl);
+                }
+            });
+
+            clearBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                searchInput.focus();
+                toggleClearBtn();
+                resultsContainer.style.display = 'none';
+                noResultsContainer.style.display = 'none';
+                searchStatus.innerHTML = '';
+                document.querySelectorAll('script[data-gymlist-schema]').forEach(el => el.remove());
+                const cleanUrl = window.location.pathname;
+                window.history.pushState({}, '', cleanUrl);
+            });
+
+            document.querySelectorAll('.search-hint span').forEach(span => {
+                span.addEventListener('click', function() {
+                    searchInput.value = this.textContent.trim();
+                    toggleClearBtn();
+                    performSearch();
+                });
+            });
+
+            window.addEventListener('popstate', function(e) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const cityParam = urlParams.get('city');
+                if (cityParam) {
+                    searchInput.value = cityParam;
+                    setTimeout(performSearch, 100);
+                } else {
+                    searchInput.value = '';
+                    resultsContainer.style.display = 'none';
+                    noResultsContainer.style.display = 'none';
+                    searchStatus.innerHTML = '';
+                    document.querySelectorAll('script[data-gymlist-schema]').forEach(el => el.remove());
+                }
+            });
+
+            // Start
+            loadData();
+        })();
+    </script>
+</body>
+</html>

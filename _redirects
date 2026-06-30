@@ -1,0 +1,5 @@
+# Redirect www to non-www (fixes canonicalization)
+https://www.gymlist.ro/* https://gymlist.ro/:splat 301!
+
+# Redirect /index.html to root
+/index.html / 301

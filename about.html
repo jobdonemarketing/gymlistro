@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despre noi — Gymlist.ro</title>
+    <link rel="icon" href="/img/favicon.png">
+    <style>
+        /* Re-use the same palette and basic styles as index.html */
+        :root {
+            --bg-primary: #121212;
+            --text-primary: #FFFFFF;
+            --accent: #2563EB;
+            --cta: #FF7A00;
+            --bg-secondary: #1e1e1e;
+            --text-muted: #aaaaaa;
+            --border: #333;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #000;
+            border-bottom: 2px solid var(--accent);
+            flex-wrap: wrap;
+            margin-top:1.5rem;
+        }
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-logo .slice {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .nav-cta {
+            background-color: var(--cta);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer {
+            background: #000;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid var(--accent);
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+        a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="nav-logo"><span class="slice"></span> Gymlist.ro</a>
+        <a href="/#search" class="nav-cta">Caută o Sală</a>
+    </nav>
+
+    <div style="max-width:800px;margin:4rem auto;padding:0 1.5rem;">
+        <h1 style="font-size:2.5rem;font-weight:900;">Despre Gymlist.ro</h1>
+        <p style="font-size:1.2rem;color:#aaaaaa;margin-top:1rem;">
+            Gymlist.ro s-a născut din nevoia de transparență totală în industria fitness-ului. 
+            Am văzut prea multe recenzii false și promovări plătite. 
+            Credem că o sală de sport bună se măsoară prin <strong>igienă, echipament, atmosferă, profesionalism și facilități</strong> — nu prin bugete de marketing.
+        </p>
+        <p style="font-size:1.2rem;color:#aaaaaa;margin-top:1rem;">
+            Toate evaluările sunt realizate anonim de auditori independenți care se antrenează și filmează cu camere ascunse. 
+            Rezultatele sunt publicate fără cenzură, iar sigiliul <strong>„Gymlist Approved”</strong> se acordă exclusiv pe bază de punctaj, în urma auditurilor repetate.
+        </p>
+        <p style="font-size:1.2rem;color:#aaaaaa;margin-top:1rem;">
+            Vrei să devii auditor sau să ne propui o sală de sport? <a href="/contact.html">Contactează-ne</a>.
+        </p>
+        <p style="margin-top:2rem;"><a href="/" style="font-weight:600;color:#2563EB;">← Înapoi la pagina principală</a></p>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Gymlist.ro</p>
+    </footer>
+</body>
+</html>
