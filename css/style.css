@@ -7,14 +7,14 @@
 
 body {
     font-family: 'Inter', -apple-system, sans-serif;
-    background: #121212;            /* Dark charcoal */
-    color: #FFFFFF;                 /* White text */
+    background: #121212;
+    color: #FFFFFF;
     line-height: 1.5;
     padding: 0 1.5rem;
 }
 
 a {
-    color: #2563EB;                 /* Royal blue */
+    color: #2563EB;
     text-decoration: none;
 }
 a:hover {
@@ -35,7 +35,7 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    background: #1e1e1e;            /* Slightly lighter charcoal */
+    background: #1e1e1e;
     border-radius: 60px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: sticky;
@@ -56,12 +56,12 @@ img {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background: #2563EB;            /* Royal blue */
+    background: #2563EB;
     border-radius: 50% 50% 50% 0;
     transform: rotate(-45deg);
 }
 .nav-cta {
-    background: #FF7A00;            /* Orange CTA */
+    background: #FF7A00;
     color: #fff;
     padding: 0.5rem 1.4rem;
     border-radius: 40px;
@@ -85,7 +85,7 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(37, 99, 235, 0.15);   /* Royal blue tint */
+    background: rgba(37, 99, 235, 0.15);
     padding: 0.4rem 1.2rem;
     border-radius: 40px;
     font-size: 0.8rem;
@@ -96,7 +96,7 @@ img {
 .hero-badge .dot {
     width: 8px;
     height: 8px;
-    background: #22C55E;            /* Green success */
+    background: #22C55E;
     border-radius: 50%;
     display: inline-block;
     animation: pulse 1.8s infinite;
@@ -115,7 +115,7 @@ img {
     margin: 0 auto 1rem;
 }
 .hero .highlight {
-    color: #2563EB;                 /* Royal blue */
+    color: #2563EB;
     position: relative;
 }
 .hero .highlight::after {
@@ -176,7 +176,7 @@ img {
 }
 
 .search-btn {
-    background: #FF7A00;            /* Orange */
+    background: #FF7A00;
     color: #fff;
     border: none;
     padding: 0.75rem 1.8rem;
@@ -248,7 +248,7 @@ img {
 
 /* ===== GYM CARD ===== */
 .gym-card {
-    background: #1e1e1e;            /* Card background */
+    background: #1e1e1e;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -259,7 +259,7 @@ img {
 }
 .gym-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);   /* Blue glow */
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
 }
 
 .gym-card .card-image {
@@ -289,8 +289,8 @@ img {
     color: #fff;
 }
 
-/* ===== STATUS BADGES ===== */
-.status-badge {
+/* ===== STATUS MEDALLIONS ===== */
+.status-medallion {
     font-size: 0.6rem;
     font-weight: 700;
     padding: 0.25rem 0.7rem;
@@ -299,13 +299,16 @@ img {
     letter-spacing: 0.3px;
     text-transform: uppercase;
 }
-.status-badge.approved {
-    background: #22C55E;            /* Green success */
+.status-medallion.approved {
+    background: #22C55E;
     color: #fff;
 }
-.status-badge.pending {
+.status-medallion.pending {
     background: #6c757d;
     color: #fff;
+}
+.status-medallion .star {
+    margin-right: 2px;
 }
 
 .gym-card .card-address {
@@ -394,7 +397,7 @@ img {
     width: 24px;
     height: 24px;
     border: 3px solid #333;
-    border-top-color: #2563EB;      /* Royal blue */
+    border-top-color: #2563EB;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }
@@ -488,7 +491,6 @@ img {
 .trust-banner h3 {
     font-size: 1.6rem;
     font-weight: 800;
-    color: #fff;
 }
 .trust-banner p {
     max-width: 600px;
@@ -497,7 +499,7 @@ img {
 }
 .seal-demo {
     display: inline-block;
-    background: #2563EB;            /* Royal blue */
+    background: #2563EB;
     color: #fff;
     padding: 0.4rem 1.6rem;
     border-radius: 40px;
@@ -525,7 +527,7 @@ img {
 }
 .btn-large {
     display: inline-block;
-    background: #FF7A00;            /* Orange CTA */
+    background: #FF7A00;
     color: #fff;
     padding: 0.8rem 2.8rem;
     border-radius: 60px;

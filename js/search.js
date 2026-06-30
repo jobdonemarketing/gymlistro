@@ -12,15 +12,13 @@
     let isSearching = false;
     let currentQuery = '';
 
-    // ===== NORMALIZATION (FIXED) =====
+    // ===== NORMALIZATION =====
     function normalize(str) {
         return str.trim().toLowerCase()
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')   // strip diacritics
-            .replace(/[șş]/g, 's').replace(/[țţ]/g, 't')        // Romanian S/T with cedilla/comma
-            .replace(/[ăâ]/g, 'a').replace(/[î]/g, 'i')          // Romanian A/I variants
-            .replace(/[-–—]/g, ' ')                               // hyphens, en-dash, em-dash → space
-            .replace(/\s+/g, ' ')                                 // collapse multiple spaces
-            .trim();
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[șş]/g, 's').replace(/[țţ]/g, 't')
+            .replace(/[ăâ]/g, 'a').replace(/[î]/g, 'i')
+            .replace(/\s+/g, ' ');
     }
 
     // ===== CREATE SLUG FOR URL =====
@@ -139,8 +137,8 @@
         resultsContainer.style.display = 'grid';
         resultsContainer.innerHTML = gyms.map(g => {
             const statusHtml = g.approved
-                ? '<span class="status-badge approved">Aprobat Gymlist</span>'
-                : '<span class="status-badge pending">În așteptare</span>';
+                ? '<span class="status-medallion approved"><span class="star">⭐</span> Aprobat Gymlist</span>'
+                : '<span class="status-medallion pending">⏳ În așteptare</span>';
 
             const phone = g.phone ? `<a href="tel:${g.phone}" class="phone-link">📞 Sună</a>` : '';
             const maps = g.address ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(g.address + ', ' + g.city)}" target="_blank" rel="noopener">🗺️ Hartă</a>` : '';
@@ -171,7 +169,7 @@
         }).join('');
     }
 
-    // ===== PERFORM SEARCH (FIXED) =====
+    // ===== PERFORM SEARCH =====
     function performSearch() {
         if (isSearching) return;
         if (!gymsData) {
@@ -200,14 +198,7 @@
             const filtered = gymsData.filter(g => {
                 const cityNorm = normalize(g.city);
                 const postalNorm = normalize(g.postal_code);
-                const nameNorm = normalize(g.name);
-                const addressNorm = normalize(g.address || '');
-
-                // Match city (full or partial), postal code (starts with or exact), name, or address
-                return cityNorm.includes(query) ||
-                       postalNorm.includes(query) ||     // ← changed from startsWith to includes for partial postcode
-                       nameNorm.includes(query) ||
-                       addressNorm.includes(query);
+                return cityNorm.includes(query) || postalNorm.startsWith(query);
             });
 
             filtered.sort((a, b) => {
