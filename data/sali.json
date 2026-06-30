@@ -84,17 +84,17 @@
     "score_profesionalism": 7,
     "score_facilitati": 7
   },
-    {
+  {
     "name": "Diamond Fitness",
     "city": "Sânnicolau Mare",
     "address": "Strada Eftimie Murgu 15",
     "postal_code": "305600",
     "phone": "0726 985 430",
     "website": "https://www.facebook.com/DiamondFitnessClubSportiv/",
-    "image": "/img/diamondfitness.jpg?w=400&h=250&fit=crop",
+    "image": "/img/diamondfitness.jpg",
     "description": "Adi si Emi Lungu - performanta de top pentru profesionisti si amatori ambitiosi.",
     "approved": true,
-    "video_url": "https://www.facebook.com/DiamondFitnessClubSportiv/videos/diamond-fitness-sannicolau-cu-peste-14-ani-de-existen%C8%9B%C4%83-%C8%99i-experien%C8%9B%C4%83-diamond-fi/1241322397851833/",
+    "video_url": "https://www.facebook.com/DiamondFitnessClubSportiv/videos/1241322397851833/",
     "score_igiena": 9,
     "score_echipament": 9,
     "score_atmosfera": 8,
